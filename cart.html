@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/cart.css">
+    <link rel="icon" type="image/png"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu4r9L97O1p9kBEjZwQ3KGuu0kRJmg4cYI6Q&usqp=CAU">
+</head>
+
+
+
+<body>
+
+    <div id="purchaseCompleted">
+
+        <div>
+            <i id="closePopup" class="far fa-times-circle"></i>
+
+            <h1>Comanda dumneavoastra a fost inregistrata!</h1>
+            <p>Va multumim pentru increderea acordata. <i class="far fa-smile-beam"></i></p>
+        </div>
+    </div>
+
+    <header class="header" id="headerContent">
+        <i id="navbarMenuIcon" class="fas fa-bars"></i>
+
+        <nav class="header__nav sideBySide">
+            <h1 class="header__nav_title"><a href="index.html"><i class="fab fa-weebly"></i>ebshop</a></h1>
+            <button class="header__nav_store" type="button" onclick="location.href = 'cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <a>cos cumparaturi</a>
+            </button>
+        </nav>
+    </header>
+
+
+
+    <section class="cart" id="cartContent">
+
+        <div class="tableWrapper">
+            <table id="cartTable" class="cart__table">
+                <thead>
+                    <th>Nume</th>
+                    <th>Pret</th>
+                    <th>Cantitate</th>
+                    <th>Subtotal</th>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+            <div id="noProductsTooltip">
+                <p><i class="fas fa-exclamation-circle"></i> Momentan nu exista niciun produs in cosul de cumparaturi.
+                </p>
+                <p>Consultati <a href="index.html">Pagina principala</a> pentru a adauga produse.</p>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="cartOrder" class="cart__order">
+            <p>Produse: <span id="productsCount"></span></p>
+            <p>TVA: 0 %</p>
+            <p>Transport: 0 $</p>
+            <p>Total: <span id="totalDue"></span></p>
+            <input id="buyProducts" type="button" value="&#8594; CUMPARA">
+        </div>
+
+    </section>
+
+
+
+    <script src="https://kit.fontawesome.com/ce06a6f7a3.js" crossorigin="anonymous"></script>
+    <script src="/JAVASCRIPT/utilities.js"></script>
+    <script src="/JAVASCRIPT/requests.js"></script>
+    <script src="/JAVASCRIPT/cart.js"></script>
+</body>
+
+</html>

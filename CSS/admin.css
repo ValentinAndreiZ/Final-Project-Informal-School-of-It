@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* UTILITIES */
+
+.sideBySide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    border-radius: .4rem;
+}
+
+/* UTILITIES */
+
+.header {
+    margin: 2rem 0rem 2rem;
+}
+
+.header>i {
+    display: none;
+}
+
+.header__nav {}
+
+.header__nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.header__nav_title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    padding-bottom: .5rem;
+    border-bottom: .1px #eee solid;
+}
+
+.header__nav_store {
+    text-transform: uppercase;
+    padding: .5rem 2rem;
+    background-color: transparent;
+    border: #eee 1px solid;
+    cursor: pointer;
+}
+
+.header__nav_store>i {
+    font-size: 1.8rem;
+}
+
+.header__nav_store :nth-child(1) {
+    color: #7510F7;
+}
+
+.products {
+    /* display: none; */
+    border: #eee 1px solid;
+}
+
+.products__header {
+    padding: 2rem 1rem;
+}
+
+.products__header_title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.products__header_add {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #7510F7;
+}
+
+.products__container {
+    overflow-x: auto;
+}
+
+.products__container table {
+    width: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.products__container table thead ::after {
+    line-height: 2rem;
+    content: "\200C";
+    display: block;
+}
+
+.products__container table tbody tr:nth-child(odd) {
+    background-color: rgb(246, 246, 246);
+}
+
+.products__container table :nth-child(2) {
+    width: 70%;
+}
+
+.products__container table input {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: rgb(49, 49, 207);
+    font-size: 1.5rem;
+}
+
+.products__container>table tr {
+    border: 2px black solid;
+}
+
+.products__container>table>tbody>tr>:not(:nth-child(2)) {
+    text-align: center;
+}
+
+.products__container>table>tbody img {
+    width: 30px;
+    height: 30px;
+    margin: 0rem 1rem;
+}
+
+.addForm {
+    display: none;
+    margin: 2rem 0rem;
+    border: black 2px solid;
+    padding: 2rem 2rem;
+}
+
+.addForm__header {
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+.addForm__container {}
+
+.addForm__container div {
+    margin: 1rem .2rem;
+}
+
+.addForm__container label {
+    font-size: 1.6rem;
+}
+
+.addForm__container input, textarea {
+    width: 70%;
+    resize: none;
+    padding: .9rem;
+}
+
+.addForm__container textarea {
+    height: 10rem;
+}
+
+.addForm__header button {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.addForm__header_save {
+    background-color: #7510F7;
+}
+
+.addForm__header .addForm__header_cancel {
+    color: black;
+    background-color: transparent;
+    border: #eee 1px solid;
+}
+
+@media only screen and (max-width: 992px) {
+    body {
+        width: 95%;
+    }
+    .sideBySide {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0rem 2rem;
+    }
+    .header>i {
+        align-self: flex-end;
+        width: fit-content;
+        display: inline-block;
+        text-align: right;
+        margin-right: 2rem;
+        font-size: 3rem;
+    }
+    .header__nav {}
+    .header>nav>div {
+        margin-left: 2rem;
+    }
+    .header>nav>div>button {
+        /* display: block; */
+        display: none;
+    }
+    .header__nav a {
+        text-decoration: none;
+        color: black;
+    }
+    .header__nav_title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .header__nav_store {
+        text-transform: uppercase;
+        width: 20rem;
+        padding: .5rem 2rem;
+        background-color: transparent;
+        border: #eee 1px solid;
+        cursor: pointer;
+    }
+    .products {
+        border: none;
+    }
+    .products__header_title {
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 2rem 0rem 1rem 0rem;
+    }
+    .products__header_add {
+        width: 20rem;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        padding: 1rem 1rem;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background-color: #7510F7;
+    }
+    .products__container {
+        overflow-x: auto;
+    }
+    .addForm__container {}
+    .addForm__container input, textarea {
+        width: 100%;
+        resize: none;
+        padding: .9rem;
+    }
+}

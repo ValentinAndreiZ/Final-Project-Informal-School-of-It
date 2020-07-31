@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* UTILITIES */
+
+.sideBySide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    border-radius: .4rem;
+}
+
+/* UTILITIES */
+
+.popUp {
+    display: none;
+    padding: 2rem;
+    color: white;
+    background-color: #7510F7;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header {
+    margin: 2rem 0rem 2rem;
+}
+
+.header>i {
+    display: none;
+}
+
+.header__nav {}
+
+.header__nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.header__nav_title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    padding-bottom: .5rem;
+    border-bottom: .1px #eee solid;
+}
+
+.header__nav_store {
+    text-transform: uppercase;
+    padding: .5rem 2rem;
+    background-color: transparent;
+    border: #eee 1px solid;
+    cursor: pointer;
+}
+
+.header__nav_store>i {
+    font-size: 1.8rem;
+}
+
+.header__nav_store :nth-child(1) {
+    color: #7510F7;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    border: #eee 2px solid;
+}
+
+.product__image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+}
+
+.product__image img {
+    height: 35rem;
+    width: 35rem;
+}
+
+.product__text {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product__text h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.product__text p:nth-child(2) {
+    font-size: 1.4rem;
+}
+
+.product__text p:nth-child(3) {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px #eee solid;
+}
+
+.product__text p:nth-child(4) {
+    font-size: 1.4rem;
+    padding-top: 3rem;
+}
+
+.product__text div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.product__text>div>input {
+    padding: .5rem;
+    margin-left: 1rem;
+    width: 5rem;
+}
+
+.product__text>input {
+    background-color: #7510F7;
+    color: white;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    width: fit-content;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+    body {
+        /* max-width: 100%; */
+        width: 100%;
+        margin: 0 auto;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .sideBySide {
+        display: block;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0rem 2rem;
+    }
+    .header>i {
+        align-self: flex-end;
+        width: fit-content;
+        display: inline-block;
+        text-align: right;
+        margin-right: 2rem;
+        font-size: 3rem;
+    }
+    .header__nav {}
+    .header>nav>div {
+        margin-left: 2rem;
+    }
+    .header>nav>div>button {
+        /* display: block; */
+        display: none;
+    }
+    .header__nav a {
+        text-decoration: none;
+        color: black;
+    }
+    .header__nav_title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .header__nav_store {
+        text-transform: uppercase;
+        padding: .5rem 2rem;
+        background-color: transparent;
+        border: #eee 1px solid;
+        cursor: pointer;
+    }
+    .product {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        border: none;
+    }
+    .product__image {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    .product__image img {
+        /* height: 40vh;
+        width: 40vw; */
+    }
+    .product__text {
+        margin: 4rem 0rem 2rem 0rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .product__image img {
+        height: 25rem;
+        width: 25rem;
+    }
+}
