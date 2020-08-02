@@ -26,19 +26,7 @@ var addOrUpdateString = document.getElementById('addOrUpdateString');
 var tableBody = document.getElementById('tableBody');
 //Areas
 
-// Classes
-class postForm {
-    constructor(imageUrl, name, description, price, quantity) {
 
-        this.imageUrl = imageUrl,
-            this.name = name,
-            this.description = description,
-            this.price = price,
-            this.quantity = quantity
-    }
-}
-
-// Classes
 
 window.onload = () => {
     sendHTTPRequestGET(renderData)
@@ -141,7 +129,7 @@ saveButton.addEventListener('click', (e) => {
         } else {
 
             var dataToBeSent = new postForm(imageUrlWrite.value, nameWrite.value, descriptionWrite.value, priceWrite.value * 1, quantityWrite.value * 1)
-            sendHTTPRequestUPDATE(updatingId, dataToBeSent)
+            sendHTTPRequestUPDATE(updatingId, dataToBeSent, renderData)
             updating = false;
         }
     }

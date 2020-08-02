@@ -68,8 +68,6 @@ function renderDetails(product) {
         name: product.name
     })
 
-    console.log(product.quantity)
-
 
     productAdd.addEventListener('click', () => {
 
@@ -80,12 +78,12 @@ function renderDetails(product) {
         if (productsOnStorage !== null) {
             productsOnStorage.forEach(productOnStorage => {
                 if (productOnStorage.id === urlId) {
-                    // console.log(productOnStorage.quantity)
+                    
                     storageProductQuantity = productOnStorage.quantity
                 }
             })
         }
-        console.log(product.quantity, +desiredQuantityInput.value, storageProductQuantity)
+    
 
         if (preventExceedingStock(product.quantity, (+desiredQuantityInput.value) + storageProductQuantity)) {
 
@@ -98,7 +96,6 @@ function renderDetails(product) {
 
     })
 
-    // console.log(cartProducts)
     imgContainer.appendChild(productImage);
 
     textContainer.appendChild(productName);
@@ -156,7 +153,11 @@ function productsToLocalStorage(userInputQuantity) {
 
 function showPopUp(popUpDiv, popUpName) {
     popUpDiv.style.display = 'block';
+    // popUpDiv.style.width = '80%';
     popUpSpan.innerHTML = popUpName;
+    popUpSpan.style.fontWeight = '100';
+    popUpSpan.style.color = 'yellow';
+
     setTimeout(function () { hidePopUp(popUpDiv); }, 3000);
 }
 

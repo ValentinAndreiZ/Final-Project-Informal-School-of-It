@@ -23,9 +23,15 @@ closePopup.addEventListener('click', () => {
     location.href = 'index.html'
 })
 
-buyProducts.addEventListener('click', () => {
 
-    let emptyArr = []
+var productsToBeUpdated = [];
+
+buyProducts.addEventListener('click', () => {
+    productsToBeUpdated.forEach(product => {
+           var updatedData = new postForm(product.imageUrl, product.name, product.description, product.price, product.stock - product.quantity)
+        sendHTTPRequestUPDATE(product.id, updatedData)
+    })
+    let emptyArr = [] 
 
     if (localStorageProducts.length !== 0) {
         purchaseCompleted.style.display = 'flex';
@@ -34,21 +40,11 @@ buyProducts.addEventListener('click', () => {
         localStorage.setItem('product', JSON.stringify(emptyArr))
         updateOrder([])
     }
-
 })
+
 
 sendHTTPRequestGET(defineProducts)
 
-
-class ProductToBeRendered {
-    constructor(name, price, quantity, id, stock) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.id = id;
-        this.stock = stock
-    }
-}
 
 function defineProducts(dataFromServer) {
 
@@ -58,12 +54,14 @@ function defineProducts(dataFromServer) {
 
             localStorageProducts.forEach((localStoredProduct) => {
                 if (onServerProduct.id === localStoredProduct.id) {
-                    let productToBeRendered = new ProductToBeRendered(onServerProduct.name, onServerProduct.price, localStoredProduct.quantity, onServerProduct.id, onServerProduct.quantity)
+                    let productToBeRendered = new ProductToBeRendered(onServerProduct.name, onServerProduct.price, localStoredProduct.quantity, onServerProduct.id, onServerProduct.quantity, onServerProduct.imageUrl, onServerProduct.description)
                     productsToBeRendered.push(productToBeRendered)
+                    productsToBeUpdated.push(productToBeRendered)
                 }
             })
         })
         renderCart(productsToBeRendered)
+
     } else {
         tableBody.innerHTML = '';
     }

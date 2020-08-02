@@ -51,15 +51,15 @@ function sendHTTPRequestDELETE(id) {
 }
  
 
-function sendHTTPRequestUPDATE(id, newObject) {
+function sendHTTPRequestUPDATE(id, newObject, callback) { 
     var request = new XMLHttpRequest();
     request.open('PUT', 'https://siit-webshop.firebaseio.com/' + id + '.json');
     request.setRequestHeader('Content-type', 'application/json');
     request.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log('update Done')
-            sendHTTPRequestGET(renderData)
+        if (this.readyState === 4 && this.status === 200 && callback !== undefined) {
+            sendHTTPRequestGET(callback) 
         }
     }
+    
     request.send(JSON.stringify(newObject))
 }
