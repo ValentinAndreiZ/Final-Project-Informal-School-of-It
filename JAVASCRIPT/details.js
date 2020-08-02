@@ -20,21 +20,14 @@ singleProductFetch.onreadystatechange = function () {
 }
 singleProductFetch.send()
 
-
-
-
-
 function renderDetails(product) {
 
     singleProduct = product;
-
 
     let imgContainer = document.createElement('div')
     imgContainer.setAttribute('class', 'product__image')
     let textContainer = document.createElement('div')
     textContainer.setAttribute('class', 'product__text')
-
-
 
     let productImage = document.createElement('img')
     productImage.setAttribute('src', product.imageUrl)
@@ -70,9 +63,7 @@ function renderDetails(product) {
 
 
     productAdd.addEventListener('click', () => {
-
         var storageProductQuantity = 0;
-
         var productsOnStorage = JSON.parse(localStorage.getItem('product'))
 
         if (productsOnStorage !== null) {
@@ -84,7 +75,6 @@ function renderDetails(product) {
             })
         }
     
-
         if (preventExceedingStock(product.quantity, (+desiredQuantityInput.value) + storageProductQuantity)) {
 
             productsToLocalStorage(desiredQuantityInput.value);

@@ -6,13 +6,9 @@ var searchButton = document.getElementById('searchButton')
 // var serverData = []
 
 
-
-
 window.onload = changeFooterDisplay(lessThan768)
 
 function renderProducts(data) {
-    // console.log(data)
-
 
     data.forEach(element => {
 
@@ -20,7 +16,7 @@ function renderProducts(data) {
 
             let productBox = document.createElement('div');
             productBox.setAttribute('class', 'products__box')
-           
+
 
             let priceAndDetails = document.createElement('div') // Created to insert into it the product price and the details so they can be sidebyside
             priceAndDetails.setAttribute('class', 'flexCenter')
@@ -52,12 +48,8 @@ function renderProducts(data) {
             productBox.appendChild(priceAndDetails)
 
             productsContainerIndex.appendChild(productBox)
-
         }
-
-
     })
-
 }
 
 sendHTTPRequestGET(renderProducts)
@@ -73,7 +65,7 @@ searchButton.addEventListener('click', (e) => {
 searchText.addEventListener("keyup", function (event) {
 
     if (event.key === "Enter") {
-       
+
         if (!event.detail || event.detail === 0) {
             productsContainerIndex.innerHTML = '';
             sendHTTPRequestGET(renderProducts)

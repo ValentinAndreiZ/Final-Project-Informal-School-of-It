@@ -23,15 +23,14 @@ closePopup.addEventListener('click', () => {
     location.href = 'index.html'
 })
 
-
 var productsToBeUpdated = [];
 
 buyProducts.addEventListener('click', () => {
     productsToBeUpdated.forEach(product => {
-           var updatedData = new postForm(product.imageUrl, product.name, product.description, product.price, product.stock - product.quantity)
+        var updatedData = new postForm(product.imageUrl, product.name, product.description, product.price, product.stock - product.quantity)
         sendHTTPRequestUPDATE(product.id, updatedData)
     })
-    let emptyArr = [] 
+    let emptyArr = []
 
     if (localStorageProducts.length !== 0) {
         purchaseCompleted.style.display = 'flex';
@@ -69,7 +68,6 @@ function defineProducts(dataFromServer) {
 }
 
 function renderCart(productsToBeRendered) {
-    // console.log(productsToBeRendered)
     productsToBeRendered.forEach((product) => {
 
         let row = tableBody.insertRow();
@@ -95,7 +93,7 @@ function renderCart(productsToBeRendered) {
         Object.assign(subtractButton, {
             type: 'button',
             value: ' - ',
-            id: product.id // name
+            id: product.id 
         })
 
         subtractButton.addEventListener('click', (e) => {
@@ -133,9 +131,7 @@ function renderCart(productsToBeRendered) {
                     }
                 }
             }
-
             localStorage.setItem('product', JSON.stringify(productsToBeRendered))
-
         })
 
         let removeButton = document.createElement('input')
@@ -145,7 +141,6 @@ function renderCart(productsToBeRendered) {
             // id: product.name
             id: product.id
         })
-
 
         removeButton.addEventListener('click', (e) => {
 
@@ -161,8 +156,6 @@ function renderCart(productsToBeRendered) {
             localStorageProducts = JSON.parse(localStorage.getItem('product'))
             displayTooltip(noProductsTooltip);
         })
-
-
 
         nameCell.appendChild(nameButton)
         priceCell.innerHTML = product.price + ' $';

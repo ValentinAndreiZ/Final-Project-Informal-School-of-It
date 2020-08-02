@@ -231,7 +231,6 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
-
     .popUp {
         width: 100%;
         display: none;
@@ -243,11 +242,8 @@ button {
         text-transform: uppercase;
         text-align: center;
     }
-
     .product__image img {
         height: 25rem;
         width: 25rem;
     }
-
-
 }

@@ -92,9 +92,7 @@ button {
     color: red;
 }
 
-.search {
-
-}
+.search {}
 
 .search>input {
     border: #eee 1.5px solid;
@@ -158,10 +156,8 @@ button {
 }
 
 .products__box>div>input:hover {
-    background-color:rgb(44, 2, 100) ;
-    
+    background-color: rgb(44, 2, 100);
 }
-
 
 .products__box>div>input:focus {
     outline: none;
@@ -346,22 +342,18 @@ footer {
     .header>nav>div {
         margin-left: .5rem;
     }
-
     .search {
         margin-left: 3rem;
     }
-    
     .search>input {
         border: #eee 1.5px solid;
         padding: .8rem;
     }
-    
     .search>i {
         font-size: 2rem;
         color: #7510F7;
         cursor: pointer;
     }
-
     .products__box {
         width: 80%;
     }
@@ -371,6 +363,4 @@ footer {
         display: block;
         margin: auto;
     }
-
-   
 }
