@@ -75,6 +75,8 @@ function trimName(name, maxLengthAllowed, allowedChars) {
 var lessThan768 = window.matchMedia("(max-width: 768px)")
 lessThan768.addListener(changeFooterDisplay)
 
+
+
 function changeFooterDisplay(lessThan768) {
     var footerDropdownHeaders = document.getElementsByClassName('dropdownHeader')
     let allGroupsToShow = document.getElementsByClassName('groups')

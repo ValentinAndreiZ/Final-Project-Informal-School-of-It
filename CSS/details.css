@@ -29,7 +29,7 @@ button {
 /* UTILITIES */
 
 .popUp {
-    position: fixed;
+   position: static;
     top: 0;
     left: 0;
     width: 100%;
@@ -232,6 +232,7 @@ button {
 
 @media only screen and (max-width: 600px) {
     .popUp {
+        position: fixed;
         width: 100%;
         display: none;
         padding: 2rem;

@@ -148,7 +148,7 @@ function showPopUp(popUpDiv, popUpName) {
     popUpSpan.style.fontWeight = '100';
     popUpSpan.style.color = 'yellow';
 
-    setTimeout(function () { hidePopUp(popUpDiv); }, 3000);
+    setTimeout(function () { hidePopUp(popUpDiv); }, 2500);
 }
 
 function hidePopUp(popUpDiv) {
